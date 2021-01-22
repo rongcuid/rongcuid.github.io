@@ -1,0 +1,20 @@
+dist-newstyle/
+# Ignore swap files and stack/cabal output.
+*.hi
+*.o
+*.swo
+*.swp
+*~
+.DS_Store
+TAGS
+dist
+tags
+cabal.sandbox.config
+.cabal-sandbox/
+.stack-work
+dist
+dist-*
+.ghc.environment.*
+
+_cache
+_store
