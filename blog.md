@@ -1,10 +1,8 @@
 ---
-title: Home
+title: Blog
 ---
 
-<h2>Welcome</h2>
-
-<img src="/images/haskell-logo.png" style="float: right; margin: 10px;" />
+## Welcome
 
 <p>Welcome to my blog!</p>
 
