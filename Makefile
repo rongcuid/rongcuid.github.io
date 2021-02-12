@@ -15,9 +15,9 @@ commit:
 
 deploy: site
 	stack exec -- site build
-	git add docs
-	git commit -m "Deploy at `date`"
-	git push
+	@git add -v docs
+	@git commit -m "Deploy at `date`"
+	@git push
 
 clean:
 	stack exec -- site clean
