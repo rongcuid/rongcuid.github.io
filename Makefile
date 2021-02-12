@@ -1,7 +1,9 @@
 all: site
 
-site:
+exe:
 	stack build
+
+site: exe
 	stack exec -- site build
 
 watch: site
@@ -13,4 +15,4 @@ clean:
 distclean: clean
 	stack clean
 
-.PHONY: site watch clean distclean
+.PHONY: exe site watch clean distclean
