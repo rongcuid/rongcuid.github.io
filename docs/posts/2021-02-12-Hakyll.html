@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Rongcui Dong's Site - Blog</title>
-        <link rel="stylesheet" href="./css/default.css" />
+        <title>Rongcui Dong's Site - Why Hakyll?</title>
+        <link rel="stylesheet" href="../css/default.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
         <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
@@ -17,35 +17,38 @@
     <body>
         <header>
             <div class="logo">
-                <a href="./">Rongcui Dong's Site</a>
+                <a href="../">Rongcui Dong's Site</a>
             </div>
             <nav>
-                <a href="./">Home</a>
-                <a href="./blog.html">Blog</a>
-                <a href="./contact.html">Contact</a>
-                <a href="./archive.html">Archive</a>
+                <a href="../">Home</a>
+                <a href="../blog.html">Blog</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../archive.html">Archive</a>
             </nav>
         </header>
 
         <main role="main">
-            <h1>Blog</h1>
-            <h2>Welcome</h2>
-
-<p>Welcome to my blog!</p>
-
-<p>I've reproduced a list of recent posts here for your reading pleasure:</p>
-
-<h2>Posts</h2>
-<ul>
-    
-        <li>
-            <a href="./posts/2021-02-12-Hakyll.html">Why Hakyll?</a> - February 12, 2021
-        </li>
-    
-</ul>
-
-
-<p>…or you can find more in the <a href="./archive.html">archives</a>.</p>
+            <h1>Why Hakyll?</h1>
+            <article>
+    <section class="header">
+        Posted on February 12, 2021
+        
+    </section>
+    <section>
+        <p><a href="https://jaspervdj.be/hakyll/">Hakyll</a> is the choice of static site generator for this website. It is chosen because:</p>
+<ol>
+<li>Pandoc supports a plethora of formats</li>
+<li>Hakyll allows immensely powerful customization</li>
+<li>I like Haskell</li>
+</ol>
+<p>The blogs I will write from now on are most likely written in Markdown. More specifically, Pandoc’s flavor of Markdown, which supports cool things like:</p>
+<p><span class="math display">\[
+\oiint_{\partial\Omega} \mathbf{E} \cdot d\mathbf{S} = {1\over\epsilon_0}\iiint_\Omega \rho dV
+\]</span> which is the Gauss’s law written as an integral equation.</p>
+<p>Note that there is a small hack here: the backend compile equation as MathJax, but I use KaTeX scripts to render them on the page. This is because KaTeX supports more symbols than MathJax, such as the double surface integral symbol above.</p>
+<p>The only difference between the two is that Pandoc compiles MathJax equations surrounded with <code>\[</code> and <code>\]</code>. This allows KaTeX’s auto rendering script to recognize equations on the web page and replace them with equations.</p>
+    </section>
+</article>
 
         </main>
 
