@@ -37,7 +37,7 @@ main = hakyllWith config $ do
   match (fromList ["index.md", "contact.md"]) $ do
     route $ setExtension "html"
     compile $
-      pandocMathCompiler
+      pandocCompiler
         >>= loadAndApplyTemplate "templates/default.html" defaultContext
         >>= relativizeUrls
 
@@ -63,7 +63,7 @@ main = hakyllWith config $ do
         >>= loadAndApplyTemplate "templates/default.html" archiveCtx
         >>= relativizeUrls
 
-  match "blog.html" $ do
+  match "blog.md" $ do
     route $ setExtension "html"
     compile $ do
       posts <- recentFirst =<< loadAll "posts/*"
@@ -71,7 +71,7 @@ main = hakyllWith config $ do
             listField "posts" postCtx (return posts)
               <> defaultContext
 
-      getResourceBody 
+      pandocCompiler 
         >>= applyAsTemplate indexCtx
         >>= loadAndApplyTemplate "templates/default.html" indexCtx
         >>= relativizeUrls

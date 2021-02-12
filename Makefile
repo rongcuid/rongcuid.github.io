@@ -9,6 +9,10 @@ site: exe
 watch: site
 	stack exec -- site watch
 
+commit:
+	git add -v . -- :!docs/
+	git commit
+
 deploy: site
 	stack exec -- site build
 	git add docs
@@ -21,4 +25,4 @@ clean:
 distclean: clean
 	stack clean
 
-.PHONY: exe site watch clean distclean
+.PHONY: exe site watch commit deploy clean distclean
