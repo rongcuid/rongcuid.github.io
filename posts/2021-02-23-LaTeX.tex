@@ -1,0 +1,43 @@
+---
+title: LaTeX Blog?
+lang: en
+---
+\usepackage{hyperref}
+
+Markdown is nice for writing blogs, but converting it to PDF can be difficult.
+How about writing blogs in LaTeX?
+This page is such an attempt.
+
+\subsection{Sections}\label{sec:sections}
+Obviously, sections are equivalent to \verb|<h1>| while subsections are \verb|<h2>|.
+Referencing sections like (Section \ref{sec:sections}) does not work yet, as of the time of writing.
+Of course, it is possible for this example to work in some future time when I fix it.
+
+\subsection{Equations}\label{sec:eqs}
+
+No \LaTeX document (Note the \verb|\LaTeX| command eats a space) is complete without an equation:
+
+\begin{equation}
+    \oiint_{\partial\Omega} \mathbf{E} \cdot \mathrm{d}\mathbf{S} = {1\over\epsilon_0}\iiint_\Omega \rho \mathrm{d}V
+\end{equation}
+
+Again, labeling does not seem to work.
+This is probably related to how I hacked in KaTeX, and that I do not have \verb|pandoc-crossref| enabled yet.
+
+Now, let's try \verb|aligned|:
+
+\begin{aligned}
+    \oiint_{\partial\Omega} \mathbf{E} \cdot \mathrm{d}\mathbf{S} &= {1\over\epsilon_0}\iiint_\Omega \rho \mathrm{d}V \\
+    \oiint_{\partial\Omega} \mathbf{B} \cdot \mathrm{d}\mathbf{S} &= 0 \\
+    \oint_{\partial\Sigma} \mathbf{E} \cdot \mathrm{d}\mathbf{l}
+    &= -{\mathrm{d}\over\mathrm{d}t} \iint_\Sigma \mathbf{B} \cdot \mathrm{d}\mathbf{S} \\
+    \oint_{\partial\Sigma}\mathbf{B} \cdot \mathrm{d}\mathbf{l}
+    &= \mu_0\left(\iint_\Sigma \mathbf{J}\cdot \mathrm{d}\mathbf{S} + \epsilon_0{\mathrm{d}\over\mathrm{d}t}\iint_\Sigma \mathbf{E}\cdot\mathrm{d}\mathbf{S} \right)
+\end{aligned}
+
+Obvously, this works.
+However, LaTeX seems to be a bit overkill for a blogging environment.
+The fine-grain controls on typesetting does not really work after HTML generation, and equations are limited to KaTeX support anyways.
+
+So... I will probably stick to Markdown for this blog.
+I know there is Asciidoc which stands between Markdown and LaTeX in the spectrum of free-flow vs structured, but Pandoc cannot read Asciidoc yet.
