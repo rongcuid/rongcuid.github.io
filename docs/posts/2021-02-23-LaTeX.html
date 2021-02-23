@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Rongcui Dong's Site - Why Hakyll?</title>
+        <title>Rongcui Dong's Site - LaTeX Blog?</title>
         <link rel="stylesheet" href="../css/default.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
         <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
@@ -28,42 +28,31 @@
         </header>
 
         <main role="main">
-            <h1>Why Hakyll?</h1>
+            <h1>LaTeX Blog?</h1>
             <article>
     <section class="header">
-        Posted on February 12, 2021
+        Posted on February 23, 2021
         
     </section>
     <section>
-        <p><a href="https://jaspervdj.be/hakyll/">Hakyll</a> is the choice of static site generator for this website. It is chosen because:</p>
-<ol>
-<li>Pandoc supports a plethora of formats</li>
-<li>Hakyll allows immensely powerful customization</li>
-<li>I like Haskell</li>
-</ol>
-<p>The blogs will most likely be written in Markdown. More specifically, Pandoc’s flavor of Markdown, which supports cool things like:</p>
-<p><span class="math display">\[
-\oiint_{\partial\Omega} \mathbf{E} \cdot d\mathbf{S} = {1\over\epsilon_0}\iiint_\Omega \rho dV
-\]</span> <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> which is the Gauss’s law written as an integral equation.</p>
-<p>Note that there is a small hack here: the backend compiles equation as MathJax, but I use KaTeX scripts to render them on the page. This is because KaTeX supports more symbols than MathJax, such as the double surface integral symbol above.</p>
-<p>The only difference between the two is that Pandoc compiles MathJax equations surrounded with <code>\[</code> and <code>\]</code>. This allows KaTeX’s auto rendering script to recognize equations on the web page and replace them with equations.</p>
-<h3 id="update-2021-02-23">Update 2021-02-23</h3>
-<p>Try out the <code>aligned</code> environment: <span class="math display">\[
-\begin{aligned}
+        <p>Markdown is nice for writing blogs, but converting it to PDF can be difficult. How about writing blogs in LaTeX? This page is such an attempt.</p>
+<h2 id="sec:sections">Sections</h2>
+<p>Obviously, sections are equivalent to <code>&lt;h1&gt;</code> while subsections are <code>&lt;h2&gt;</code>. Referencing sections like (Section ) does not work yet, as of the time of writing. Of course, it is possible for this example to work in some future time when I fix it.</p>
+<h2 id="sec:eqs">Equations</h2>
+<p>No LaTeXdocument (Note the <code>\LaTeX</code> command eats a space) is complete without an equation:</p>
+<p><span class="math display">\[\oiint_{\partial\Omega} \mathbf{E} \cdot \mathrm{d}\mathbf{S} = {1\over\epsilon_0}\iiint_\Omega \rho \mathrm{d}V\]</span></p>
+<p>Again, labeling does not seem to work. This is probably related to how I hacked in KaTeX, and that I do not have <code>pandoc-crossref</code> enabled yet.</p>
+<p>Now, let’s try <code>aligned</code>:</p>
+<span class="math display">\[\begin{aligned}
     \oiint_{\partial\Omega} \mathbf{E} \cdot \mathrm{d}\mathbf{S} &amp;= {1\over\epsilon_0}\iiint_\Omega \rho \mathrm{d}V \\
     \oiint_{\partial\Omega} \mathbf{B} \cdot \mathrm{d}\mathbf{S} &amp;= 0 \\
     \oint_{\partial\Sigma} \mathbf{E} \cdot \mathrm{d}\mathbf{l}
     &amp;= -{\mathrm{d}\over\mathrm{d}t} \iint_\Sigma \mathbf{B} \cdot \mathrm{d}\mathbf{S} \\
     \oint_{\partial\Sigma}\mathbf{B} \cdot \mathrm{d}\mathbf{l}
     &amp;= \mu_0\left(\iint_\Sigma \mathbf{J}\cdot \mathrm{d}\mathbf{S} + \epsilon_0{\mathrm{d}\over\mathrm{d}t}\iint_\Sigma \mathbf{E}\cdot\mathrm{d}\mathbf{S} \right)
-\end{aligned}
-\]</span></p>
-<section class="footnotes" role="doc-endnotes">
-<hr />
-<ol>
-<li id="fn1" role="doc-endnote"><p><a href="https://en.wikipedia.org/wiki/Maxwell%27s_equations" class="uri">https://en.wikipedia.org/wiki/Maxwell%27s_equations</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
+\end{aligned}\]</span>
+<p>Obvously, this works. However, LaTeX seems to be a bit overkill for a blogging environment. The fine-grain controls on typesetting does not really work after HTML generation, and equations are limited to KaTeX support anyways.</p>
+<p>So... I will probably stick to Markdown for this blog. I know there is Asciidoc which stands between Markdown and LaTeX in the spectrum of free-flow vs structured, but Pandoc cannot read Asciidoc yet.</p>
     </section>
 </article>
 
