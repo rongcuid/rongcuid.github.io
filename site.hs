@@ -34,6 +34,10 @@ main = hakyllWith config $ do
     route idRoute
     compile compressCssCompiler
 
+  match "scripts/*" $ do 
+    route idRoute
+    compile copyFileCompiler 
+
   match (fromList ["index.md", "contact.md"]) $ do
     route $ setExtension "html"
     compile $
