@@ -139,3 +139,20 @@ article .header {
     font-size: 1.8rem;
   }
 }
+
+@media (min-width: 768px) {
+  body {
+    width: 72rem;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    width: 80rem;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+
